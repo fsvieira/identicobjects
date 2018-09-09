@@ -52,6 +52,6 @@ All registered objects are read-only and therefor they can not be changed.
 
 # Use cases
 
-    * Comparing objects created on the fly or coming from different sources,
-    * Use objects as unique key on a Map, or as a unique Set value.
+  * Comparing objects created on the fly or coming from different sources,
+  * Use objects as unique key on a Map, or as a unique Set value.
 
