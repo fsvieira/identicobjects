@@ -10,7 +10,7 @@
 # install
 
 `
-    npm install objectfactory --save
+    npm install identicobjects --save
 `
 
 # how to use
