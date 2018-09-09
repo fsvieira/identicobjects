@@ -1,21 +1,20 @@
 # IdenticObjects
-    Javascript Object Factory for unique reference shared object creation.
+    
+Javascript Object Factory for unique reference shared object creation.
 
-    It creates unique objects references for same objects, since objects
-    share references of unique objects inner equal objects will also share 
-    same references, even if there father are not equal.
+It creates unique objects references for same objects, since objects
+share references of unique objects inner equal objects will also share 
+same references, even if there father are not equal.
 
-    All registered objects are read-only and therefor they can not be changed.
+All registered objects are read-only and therefor they can not be changed.
 
 # install
 
-`
-    npm install identicobjects --save
-`
+`npm install identicobjects --save`
 
 # how to use
 
-`
+```javascript
     const IdenticObjects = require("identicobjects");
 
     const objects = new IdenticObjects();
@@ -49,7 +48,7 @@
 
     // a is unchanged since a is read-only.
     console.log(JSON.stringify(a));
-`
+```
 
 # Use cases
 
