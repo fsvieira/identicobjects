@@ -16,7 +16,8 @@
     "url": "https://github.com/fsvieira/identicobjects/issues"
   },
   "homepage": "https://github.com/fsvieira/identicobjects#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "hash-sum": "^1.0.2"
   }
 }
