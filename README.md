@@ -1,4 +1,4 @@
-# objectfactory
+# IdenticObjects
     Javascript Object Factory for unique reference shared object creation.
 
     It creates unique objects references for same objects, since objects
