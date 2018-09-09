@@ -1,6 +1,6 @@
 {
   "name": "identicobjects",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Javascript Object Factory for unique reference shared object creation.",
   "main": "src/identicobjects.js",
   "scripts": {
