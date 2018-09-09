@@ -54,5 +54,5 @@
 # Use cases
 
     * Comparing objects created on the fly or coming from different sources,
-    * Use objects as unique key on a Map, or as a Set unique set value.
+    * Use objects as unique key on a Map, or as a unique Set value.
 
