@@ -30,16 +30,6 @@ class IdenticObjects {
 
         Object.freeze(o);
 
-        /*
-        o = new Proxy(
-            {
-                value: o
-            },
-            {
-                get: (obj, prop) => prop?obj.value[prop]:obj.value
-            }
-        );*/
-
         if (!l) {
             this.objects.set(s, new Set([o]));
         }
@@ -61,12 +51,9 @@ class IdenticObjects {
     
         while (compare.length) {
             const {a, b} = compare.pop();
-    
+            
             if (a !== b) {
-                if (isNaN(a) && isNaN(b)) {
-                    continue;
-                }
-                else if (
+                if (
                     (a instanceof Array && b instanceof Array)
                     && (a.length === b.length)
                 ) {
@@ -82,7 +69,7 @@ class IdenticObjects {
                         aKeys.sort();
                         bKeys.sort();
     
-                        for (let i=0; i<a.length; i++) {
+                        for (let i=0; i<aKeys.length; i++) {
                             const aKey = aKeys[i];
                             const bKey = bKeys[i];
     
@@ -94,6 +81,16 @@ class IdenticObjects {
                             }
                         }
                     }
+                }
+                else if (
+                    typeof a !== typeof b || 
+                    typeof a === 'string' || 
+                    typeof a === 'number'
+                ) {
+                    return false;
+                }
+                else if (isNaN(a) && isNaN(b)) {
+                    continue;
                 }
                 else {
                     return false;
