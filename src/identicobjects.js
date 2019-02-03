@@ -55,10 +55,14 @@ class IdenticObjects {
             if (a !== b) {
                 if (
                     (a instanceof Array && b instanceof Array)
-                    && (a.length === b.length)
                 ) {
-                    for (let i=0; i<a.length; i++) {
-                        compare.push({a: a[i], b: b[i]});
+                    if (a.length === b.length) {
+                        for (let i=0; i<a.length; i++) {
+                            compare.push({a: a[i], b: b[i]});
+                        }
+                    }
+                    else {
+                        return false;
                     }
                 }
                 else if (a instanceof Object && b instanceof Object) {
