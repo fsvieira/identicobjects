@@ -1,15 +1,15 @@
 const sum = require("hash-sum");
 
-class IdenticObjects { 
-    constructor () {
+class IdenticObjects {
+    constructor() {
         this.objects = new Map();
     }
 
-    get (o) {
+    get(o) {
         if (o instanceof Array) {
             const r = [];
 
-            for (let i=0; i<o.length; i++) {
+            for (let i = 0; i < o.length; i++) {
                 const v = this.get(o[i]);
                 r.push(v);
             }
@@ -46,19 +46,19 @@ class IdenticObjects {
         return o;
     }
 
-    isEqual (a, b) {
-        const compare = [{a, b}];
-    
+    isEqual(a, b) {
+        const compare = [{ a, b }];
+
         while (compare.length) {
-            const {a, b} = compare.pop();
-            
+            const { a, b } = compare.pop();
+
             if (a !== b) {
                 if (
                     (a instanceof Array && b instanceof Array)
                 ) {
                     if (a.length === b.length) {
-                        for (let i=0; i<a.length; i++) {
-                            compare.push({a: a[i], b: b[i]});
+                        for (let i = 0; i < a.length; i++) {
+                            compare.push({ a: a[i], b: b[i] });
                         }
                     }
                     else {
@@ -68,17 +68,17 @@ class IdenticObjects {
                 else if (a instanceof Object && b instanceof Object) {
                     const aKeys = Object.keys(a);
                     const bKeys = Object.keys(b);
-    
+
                     if (aKeys.length === bKeys.length) {
                         aKeys.sort();
                         bKeys.sort();
-    
-                        for (let i=0; i<aKeys.length; i++) {
+
+                        for (let i = 0; i < aKeys.length; i++) {
                             const aKey = aKeys[i];
                             const bKey = bKeys[i];
-    
+
                             if (aKey === bKey) {
-                                compare.push({a: a[aKey], b: b[bKey]});
+                                compare.push({ a: a[aKey], b: b[bKey] });
                             }
                             else {
                                 return false;
@@ -87,13 +87,16 @@ class IdenticObjects {
                     }
                 }
                 else if (
-                    typeof a !== typeof b || 
-                    typeof a === 'string' || 
+                    typeof a !== typeof b ||
+                    typeof a === 'string' ||
                     typeof a === 'number'
                 ) {
                     return false;
                 }
-                else if (isNaN(a) && isNaN(b)) {
+                else if (
+                    typeof a === 'number' &&
+                    typeof b === 'number' &&
+                    isNaN(a) && isNaN(b)) {
                     continue;
                 }
                 else {
@@ -101,9 +104,9 @@ class IdenticObjects {
                 }
             }
         }
-    
+
         return true;
-    }    
+    }
 }
 
 module.exports = IdenticObjects;

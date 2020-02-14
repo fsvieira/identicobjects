@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/fsvieira/identicobjects#readme",
   "devDependencies": {
-    "jest": "^24.0.0"
+    "@stryker-mutator/core": "^2.5.0",
+    "@stryker-mutator/html-reporter": "^2.5.0",
+    "@stryker-mutator/javascript-mutator": "^2.5.0",
+    "@stryker-mutator/jest-runner": "^2.5.0",
+    "jest": "^24.9.0"
   },
   "dependencies": {
-    "hash-sum": "^1.0.2"
+    "hash-sum": "^1.0.2",
+    "mutode": "^1.4.2"
   }
 }
